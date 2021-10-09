@@ -16,25 +16,25 @@ client = TelegramClient('client', api_id, api_hash).start(bot_token=bot_token)
 
 @client.on(events.NewMessage(pattern="^/start$"))
 async def start(event):
-  await event.reply("__**I'm MentionAll Bot**, I can mention almost all members in group or channel 👻\nClick **/help** for more information__\n\n Need Any Help ? Follow [ELECTRO](https://t.me/ELECTRO_UPDATES) on Telegram.",
+  await event.reply("__**I'm MentionX Bot**, I can mention almost all members in group or channel 👻\nClick **/help** for more information__\n\n Need Any Help ? Follow [ELECTRO](https://t.me/ELECTRO_UPDATES) on Telegram.",
                     buttons=(
-                      [Button.url('📣 Channel', 'https://t.me/ELECTRO_UPDATES'),
-                      Button.url('📦 Group Support', 'https://t.me/ELECTROBOT_Support')]
+                      [Button.url('Channel🇮🇳', 'https://t.me/ELECTRO_UPDATES'),
+                      Button.url('Group Support🇮🇳', 'https://t.me/ELECTROBOT_Support')]
                     ),
                     link_preview=False
                    )
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**Help Menu of MentionAllBot**\n\nCommand: /mentionall\n__You can use this command with text what you want to mention others.__\n`Example: /mentionall Good Morning!`\n__You can you this command as a reply to any message. Bot will tag users to that replied messsage__.\n\n Need Any Help ? Follow [electro](https://t.me/BONDOFBESTIZZ) on Telegram."
+  helptext = "**Help Menu of MentionX Bot**\n\nCommand: /all\n__You can use this command with text what you want to mention others.__\n`Example: /all Good Morning!`\n__You can you this command as a reply to any message. Bot will tag users to that replied messsage__.\n\n Need Any Help ? Follow [electro](https://t.me/BONDOFBESTIZZ) on Telegram."
   await event.reply(helptext,
                     buttons=(
-                      [Button.url('📣 Channel', 'https://t.me/ELECTRO_UPDATES'),
-                      Button.url('📦 Group Support', 'https://t.me/ELECTROBOT_SUPPORT')]
+                      [Button.url('Channel🇮🇳', 'https://t.me/ELECTRO_UPDATES'),
+                      Button.url('Group Support🇮🇳'', 'https://t.me/ELECTROBOT_SUPPORT')]
                     ),
                     link_preview=False
                    )
   
-@client.on(events.NewMessage(pattern="^/mentionall ?(.*)"))
+@client.on(events.NewMessage(pattern="^/all ?(.*)"))
 async def mentionall(event):
   if event.is_private:
     return await event.respond("__This command can be use in groups and channels!__")
@@ -56,14 +56,14 @@ async def mentionall(event):
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
     return await event.respond("__Give me one argument!__")
   else:
-    return await event.respond("__Reply to a message or give me some text to mention others!__")
+    return await event.respond("__Reply to a message or give me some text to mention others🙂!__")
   
   if mode == "text_on_cmd":
     usrnum = 0
     usrtxt = ""
     async for usr in client.iter_participants(event.chat_id):
       usrnum += 1
-      usrtxt += f"[{usr.first_name},](tg://user?id={usr.id}) "
+      usrtxt += f"[{usr.first_name} ,](tg://user?id={usr.id}) "
       if usrnum == 5:
         await client.send_message(event.chat_id, f" {msg}\n\n{usrtxt}")
         await asyncio.sleep(2)
