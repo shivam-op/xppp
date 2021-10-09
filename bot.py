@@ -29,7 +29,7 @@ async def help(event):
   await event.reply(helptext,
                     buttons=(
                       [Button.url('Channel🇮🇳', 'https://t.me/ELECTRO_UPDATES'),
-                      Button.url('Group Support🇮🇳'', 'https://t.me/ELECTROBOT_SUPPORT')]
+                      Button.url('Group Support🇮🇳', 'https://t.me/ELECTROBOT_SUPPORT')]
                     ),
                     link_preview=False
                    )
