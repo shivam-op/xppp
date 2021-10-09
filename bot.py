@@ -65,7 +65,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"[{usr.first_name},](tg://user?id={usr.id}) "
       if usrnum == 5:
-        await client.send_message(event.chat_id, f"{usrtxt}\n\n{msg}")
+        await client.send_message(event.chat_id, f" {msg}\n\n{usrtxt}")
         await asyncio.sleep(2)
         usrnum = 0
         usrtxt = ""
