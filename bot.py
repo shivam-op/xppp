@@ -30,7 +30,7 @@ async def start(event):
 
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "**Help Menu of MentionX Bot**\n\nCommand: /all\n__You can use this command with text what you want to mention others.__\n`Example: /all Good Morning!`\n__You can you this command as a reply to any message. Bot will tag users to that replied messsage__.\n Command: /cancel\n_You can stop mentioning all users_ \n\n Need Any Help ? Follow [electro](https://t.me/BONDOFBESTIZZ) on Telegram."
+  helptext = "**Help Menu of MentionX Bot**\n\nCommand: /all\n__You can use this command with text what you want to mention others.__\n`Example: /all Good Morning!`\n__You can you this command as a reply to any message. Bot will tag users to that replied messsage__.\nCommand: /cancel\n__You can stop mentioning all users.__\n\n Need Any Help ? Follow [electro](https://t.me/BONDOFBESTIZZ) on Telegram."
   await event.reply(helptext,
                     buttons=(
                       [Button.url('Channel🇮🇳', 'https://t.me/ELECTRO_UPDATES'),
@@ -111,7 +111,7 @@ async def cancel_spam(event):
       spam_chats.remove(event.chat_id)
     except:
       pass
-    return await event.respond('𝐒𝐭𝐨𝐩𝐩𝐞𝐝...')
+    return await event.reply("𝚂𝚝𝚘𝚙𝚙𝚎𝚍 𝙼𝚎𝚗𝚝𝚒𝚘𝚗𝚒𝚗𝚐...")
 
 print(">> BOT STARTED <<")
 client.run_until_disconnected()
