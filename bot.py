@@ -94,7 +94,7 @@ async def mentionall(event):
         await client.send_message(chat_id, txt)
       elif mode == "text_on_reply":
         await msg.reply(usrtxt)
-      await asyncio.sleep(1)
+      await asyncio.sleep(2)
       usrnum = 0
       usrtxt = ''
   try:
@@ -111,7 +111,7 @@ async def cancel_spam(event):
       spam_chats.remove(event.chat_id)
     except:
       pass
-    return await event.reply("𝚂𝚝𝚘𝚙𝚙𝚎𝚍 𝙼𝚎𝚗𝚝𝚒𝚘𝚗𝚒𝚗𝚐...")
+    return await event.reply("𝗦𝘁𝗼𝗽𝗽𝗲𝗱")
 
 print(">> BOT STARTED <<")
 client.run_until_disconnected()
